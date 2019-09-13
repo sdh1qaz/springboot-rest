@@ -1,4 +1,4 @@
-package com.bee.sample.ch12;
+package com.sprest.application;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

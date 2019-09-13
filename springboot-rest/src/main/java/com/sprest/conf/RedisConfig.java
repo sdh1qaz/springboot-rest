@@ -1,4 +1,4 @@
-package com.bee.sample.ch12.conf;
+package com.sprest.conf;
 
 import java.net.UnknownHostException;
 

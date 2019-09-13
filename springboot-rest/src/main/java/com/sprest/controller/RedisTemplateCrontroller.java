@@ -1,4 +1,4 @@
-package com.bee.sample.ch12.controller;
+package com.sprest.controller;
 
 import java.util.Date;
 

@@ -1,4 +1,4 @@
-package com.bee.sample.ch12.controller;
+package com.sprest.controller;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bee.sample.ch12.controller.RedisTemplateCrontroller.User;
+import com.sprest.controller.RedisTemplateCrontroller.User;
 
 @Controller
 @RequestMapping("/rediskey") 
