@@ -2,6 +2,10 @@ package com.sprest.pojo;
 
 import java.io.Serializable;
 
+/**
+ * 用户实体类
+ * @author 苏登辉
+ */
 public class UserVo implements Serializable {
 	private static final long serialVersionUID = 1L;
 	/**
