@@ -1,84 +1,95 @@
-<!--用户映射文件-->
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sprest.dao.UserVoMapper">
 
-  <resultMap id="BaseResultMap" type="com.sprest.pojo.UserVo">
-    <id column="uid" jdbcType="INTEGER" property="uid" />
-    <result column="username" jdbcType="VARCHAR" property="username" />
-    <result column="password" jdbcType="VARCHAR" property="password" />
-    <result column="email" jdbcType="VARCHAR" property="email" />
-    <result column="home_ur1l" jdbcType="VARCHAR" property="homeUrl" />
-    <result column="screen_name" jdbcType="VARCHAR" property="screenName" />
-    <result column="created" jdbcType="INTEGER" property="created" />
-    <result column="activated" jdbcType="INTEGER" property="activated" />
-    <result column="logged" jdbcType="INTEGER" property="logged" />
-    <result column="group_name" jdbcType="VARCHAR" property="groupName" />
-  </resultMap>
-  
-  <sql id="Base_Column_List">
-    uid, username, password, email, home_url, screen_name, created, activated, logged, 
-    group_name
-  </sql>
-  
-  <!--增 -->
-  <insert id="inserUserVo" parameterType="com.sprest.pojo.UserVo" useGeneratedKeys="true" keyProperty="uid">
-    insert into t_users ( 
-    <include refid="Base_Column_List"/>
-    )
-    values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{email,jdbcType=VARCHAR}, #{homeUrl,jdbcType=VARCHAR}, #{screenName,jdbcType=VARCHAR}, 
-      #{created,jdbcType=INTEGER}, #{activated,jdbcType=INTEGER}, #{logged,jdbcType=INTEGER}, 
-      #{groupName,jdbcType=VARCHAR})
-  </insert>
-  
-  <!--删 -->
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from t_users
-    where uid = #{uid,jdbcType=INTEGER}
-  </delete>
-  
-  <!--改 -->
-  <update id="updateByUserVo" parameterType="map">
-    update t_users
-    <set>
-      <if test="record.username != null">
-        username = #{record.username,jdbcType=VARCHAR},
-      </if>
-      <if test="record.password != null">
-        password = #{record.password,jdbcType=VARCHAR},
-      </if>
-      <if test="record.email != null">
-        email = #{record.email,jdbcType=VARCHAR},
-      </if>
-      <if test="record.homeUrl != null">
-        home_url = #{record.homeUrl,jdbcType=VARCHAR},
-      </if>
-      <if test="record.screenName != null">
-        screen_name = #{record.screenName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.created != null">
-        created = #{record.created,jdbcType=INTEGER},
-      </if>
-      <if test="record.activated != null">
-        activated = #{record.activated,jdbcType=INTEGER},
-      </if>
-      <if test="record.logged != null">
-        logged = #{record.logged,jdbcType=INTEGER},
-      </if>
-      <if test="record.groupName != null">
-        group_name = #{record.groupName,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where uid = #{record.uid,jdbcType=INTEGER},
-  </update>
-  
-  <!--查 -->
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from t_users
-    where uid = #{uid,jdbcType=INTEGER}
-  </select>
-  
+	<resultMap id="BaseResultMap" type="com.sprest.pojo.UserVo">
+		<id column="uid" jdbcType="INTEGER" property="uid" />
+		<result column="username" jdbcType="VARCHAR"
+			property="username" />
+		<result column="password" jdbcType="VARCHAR"
+			property="password" />
+		<result column="email" jdbcType="VARCHAR" property="email" />
+		<result column="home_ur1l" jdbcType="VARCHAR"
+			property="homeUrl" />
+		<result column="screen_name" jdbcType="VARCHAR"
+			property="screenName" />
+		<result column="created" jdbcType="INTEGER" property="created" />
+		<result column="activated" jdbcType="INTEGER"
+			property="activated" />
+		<result column="logged" jdbcType="INTEGER" property="logged" />
+		<result column="group_name" jdbcType="VARCHAR"
+			property="groupName" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		uid, username, password, email, home_url, screen_name, created, activated,
+		logged,
+		group_name
+	</sql>
+
+	<!--增 -->
+	<insert id="inserUserVo" parameterType="com.sprest.pojo.UserVo"
+		useGeneratedKeys="true" keyProperty="uid">
+		insert into t_users (
+		<include refid="Base_Column_List" />
+		)
+		values (#{uid,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR},
+		#{password,jdbcType=VARCHAR},
+		#{email,jdbcType=VARCHAR}, #{homeUrl,jdbcType=VARCHAR}, #{screenName,jdbcType=VARCHAR},
+		#{created,jdbcType=INTEGER}, #{activated,jdbcType=INTEGER},
+		#{logged,jdbcType=INTEGER},
+		#{groupName,jdbcType=VARCHAR})
+	</insert>
+
+	<!--删 -->
+	<delete id="deleteByPrimaryKey"
+		parameterType="java.lang.Integer">
+		delete from t_users
+		where uid = #{uid,jdbcType=INTEGER}
+	</delete>
+
+	<!--改 -->
+	<update id="updateByUserVo" parameterType="map">
+		update t_users
+		<set>
+			<if test="record.username != null">
+				username = #{record.username,jdbcType=VARCHAR},
+			</if>
+			<if test="record.password != null">
+				password = #{record.password,jdbcType=VARCHAR},
+			</if>
+			<if test="record.email != null">
+				email = #{record.email,jdbcType=VARCHAR},
+			</if>
+			<if test="record.homeUrl != null">
+				home_url = #{record.homeUrl,jdbcType=VARCHAR},
+			</if>
+			<if test="record.screenName != null">
+				screen_name = #{record.screenName,jdbcType=VARCHAR},
+			</if>
+			<if test="record.created != null">
+				created = #{record.created,jdbcType=INTEGER},
+			</if>
+			<if test="record.activated != null">
+				activated = #{record.activated,jdbcType=INTEGER},
+			</if>
+			<if test="record.logged != null">
+				logged = #{record.logged,jdbcType=INTEGER},
+			</if>
+			<if test="record.groupName != null">
+				group_name = #{record.groupName,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where uid = #{record.uid,jdbcType=INTEGER},
+	</update>
+
+	<!--查 -->
+	<select id="selectByPrimaryKey"
+		parameterType="java.lang.Integer" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from t_users
+		where uid = #{uid,jdbcType=INTEGER}
+	</select>
+
 </mapper>

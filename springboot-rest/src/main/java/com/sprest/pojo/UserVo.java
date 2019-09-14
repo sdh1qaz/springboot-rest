@@ -7,6 +7,7 @@ import java.io.Serializable;
  * @author 苏登辉
  */
 public class UserVo implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 	/**
 	 * user表主键
