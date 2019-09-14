@@ -15,7 +15,7 @@ public interface UserVoMapper {
 	/**
 	 * 增
 	 */
-	int inserUserVo(UserVo record);
+	int insertUserVo(UserVo record);
 	
 	/**
 	 * 删
