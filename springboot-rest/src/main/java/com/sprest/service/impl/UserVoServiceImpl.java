@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.sprest.dao.UserVoMapper;
 import com.sprest.pojo.UserVo;
+import com.sprest.service.IRedisService;
 import com.sprest.service.IUserVoService;
 
 /**
@@ -16,6 +17,9 @@ public class UserVoServiceImpl implements IUserVoService{
 	
 	@Autowired
 	private UserVoMapper userDao;
+	
+	@Autowired
+	private IRedisService redisService;
 
 	
 	/**
@@ -51,8 +55,15 @@ public class UserVoServiceImpl implements IUserVoService{
 	 * 根据uid查询一个用户,先查redis，查不到再查数据库
 	 */
 	public UserVo selectByPrimaryKeyWithRedis(Integer uid) {
-		
-		return userDao.selectByPrimaryKey(uid);
+		//先查redis
+		String key = "USER_UID_" + uid;
+		UserVo userVo = redisService.getObject(key, UserVo.class);
+		//如果查不到，就查数据库，然后把查到的结果放入redis
+		if (userVo==null) {
+			userVo = userDao.selectByPrimaryKey(uid);
+			redisService.setObject(key, userVo);
+		}
+		return userVo;
 	}
 
 }

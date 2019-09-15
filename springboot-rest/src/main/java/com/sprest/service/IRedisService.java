@@ -17,6 +17,9 @@ public interface IRedisService {
 	 */
 	void setObject(String key,Object val);
 	
-	
+	/**
+	 * 根据key取得对象
+	 */
+	<T> T getObject(String key,Class<T> clazz);
 	
 }

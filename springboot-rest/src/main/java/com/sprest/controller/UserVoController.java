@@ -74,6 +74,18 @@ public class UserVoController {
 		return userService.selectByPrimaryKey(uid);
 	}
 	
+	/**
+	 * 返回一个UserVo,使用redis
+	 */
+	@ApiOperation(value="查询一个用户，使用redis",notes="查询一个用户，使用redis",httpMethod="GET")
+	@ApiResponses({@ApiResponse(code=200,message="success",response=UserVo.class)})
+	@ApiImplicitParams({})
+	@RequestMapping(path="/user/get/redis/{uid}",method=RequestMethod.GET)
+	public @ResponseBody UserVo getUserWithRedis(@PathVariable("uid") Integer uid) {
+		
+		return userService.selectByPrimaryKeyWithRedis(uid);
+	}
+	
 	
 	
 	
