@@ -29,4 +29,9 @@ public interface IUserVoService {
 	 * 根据uid查询一个用户
 	 */
 	UserVo selectByPrimaryKey(Integer uid);
+	
+	/**
+	 * 根据uid查询一个用户,先查redis，查不到再查数据库
+	 */
+	public UserVo selectByPrimaryKeyWithRedis(Integer uid);
 }

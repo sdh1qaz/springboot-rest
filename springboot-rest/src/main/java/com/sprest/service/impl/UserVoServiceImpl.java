@@ -46,5 +46,13 @@ public class UserVoServiceImpl implements IUserVoService{
 		
 		return userDao.selectByPrimaryKey(uid);
 	}
+	
+	/**
+	 * 根据uid查询一个用户,先查redis，查不到再查数据库
+	 */
+	public UserVo selectByPrimaryKeyWithRedis(Integer uid) {
+		
+		return userDao.selectByPrimaryKey(uid);
+	}
 
 }
