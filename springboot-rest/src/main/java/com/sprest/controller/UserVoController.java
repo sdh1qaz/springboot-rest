@@ -1,5 +1,7 @@
 package com.sprest.controller;
 
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,6 +25,9 @@ public class UserVoController {
 	@Autowired
 	private IUserVoService userService;
 	
+	//日志记录器
+	private static final Logger logger = Logger.getLogger(UserVoController.class);
+	
 	/**
 	 * 新增一个UserVo
 	 */
@@ -33,6 +38,7 @@ public class UserVoController {
 	public @ResponseBody BaseResult addUser(@RequestBody(required=true) UserVo record) {
 		BaseResult br = new BaseResult();
 		br.setResult(userService.insertUserVo(record));
+		logger.info("新增一个用户，新增结果：" + br.getResult());
 		return br;
 	}
 	
@@ -70,7 +76,7 @@ public class UserVoController {
 	@ApiImplicitParams({})
 	@RequestMapping(path="/user/get/{uid}",method=RequestMethod.GET)
 	public @ResponseBody UserVo getUser(@PathVariable("uid") Integer uid) {
-
+		logger.info("查询uid=" + uid + "的用户信息...");
 		return userService.selectByPrimaryKey(uid);
 	}
 	
