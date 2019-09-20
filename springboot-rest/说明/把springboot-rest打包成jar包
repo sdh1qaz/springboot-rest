@@ -1,0 +1,4 @@
+项目--右键run as--maven build--
+Goals: clean package
+勾选Skip Tests
+--apply--run 
