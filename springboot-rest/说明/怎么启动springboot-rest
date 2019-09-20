@@ -4,6 +4,7 @@
 --VM arguments:
 -Dspring.profiles.active=dev
 方法3.jar包启动
+java -jar -Dserver.port=9000 -Dspring.profiles.active=dev springboot-rest-0.0.1-SNAPSHOT.jar
 java -jar -Dspring.profiles.active=dev springboot-rest-0.0.1-SNAPSHOT.jar
 
 二.服务器启动
