@@ -4,8 +4,6 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Component;
-
-import com.sprest.controller.UserVoController;
 import com.sprest.util.JsonUtil;
 
 @Component
