@@ -12,3 +12,4 @@
 2019-09-16 14:07:52,215  INFO RedisServiceImpl:33 - 读取redis，key=USER_UID_1,value={"activated":0,"created":1490756162,"email":"1034683568@qq.com","groupName":"visitor","logged":0,"password":"a66abb5684c45962d887564f08346e8d","screenName":"admin","uid":1,"username":"admin"}
 2019-09-16 14:07:56,902  INFO RedisServiceImpl:33 - 读取redis，key=USER_UID_1,value={"activated":0,"created":1490756162,"email":"1034683568@qq.com","groupName":"visitor","logged":0,"password":"a66abb5684c45962d887564f08346e8d","screenName":"admin","uid":1,"username":"admin"}
 2019-09-16 14:08:00,298  INFO RedisServiceImpl:33 - 读取redis，key=USER_UID_1,value={"activated":0,"created":1490756162,"email":"1034683568@qq.com","groupName":"visitor","logged":0,"password":"a66abb5684c45962d887564f08346e8d","screenName":"admin","uid":1,"username":"admin"}
+2019-09-20 14:32:57,919  INFO UserVoController:79 - 查询uid=1的用户信息...
