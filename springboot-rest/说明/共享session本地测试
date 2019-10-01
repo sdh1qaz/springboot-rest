@@ -1,0 +1,7 @@
+1.在eclipse中启动两个springboot-rest实例，端口为9000和9001
+
+2.打开两个swagger
+http://localhost:9000/swagger-ui.html#/
+http://localhost:9001/swagger-ui.html#/
+
+3.在两个swagger中调用getsession接口，比较返回的sessionId是否相同

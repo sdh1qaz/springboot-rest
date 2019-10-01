@@ -1,6 +1,11 @@
 package com.sprest.controller;
 
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -92,7 +97,17 @@ public class UserVoController {
 		return userService.selectByPrimaryKeyWithRedis(uid);
 	}
 	
-	
-	
+	/**
+	 * 使用redis共享session测试
+	 */
+	@ApiOperation(value="使用redis共享session测试",notes="使用redis共享session测试",httpMethod="GET")
+	@ApiResponses({@ApiResponse(code=200,message="success",response=Map.class)})
+	@ApiImplicitParams({})
+	@RequestMapping(path="/getsession",method=RequestMethod.GET)
+	public @ResponseBody Map<String, Object> getsession(HttpServletRequest request) {
+		Map<String, Object> map = new HashMap<>();  
+        map.put("sessionId", request.getSession().getId());  
+		return map;
+	}
 	
 }

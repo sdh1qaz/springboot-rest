@@ -10,9 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
+import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
 import com.alibaba.druid.pool.DruidDataSource;
 @MapperScan("com.sprest.dao")
+@EnableRedisHttpSession
 @SpringBootApplication
 public class LanuchApplication {
 	

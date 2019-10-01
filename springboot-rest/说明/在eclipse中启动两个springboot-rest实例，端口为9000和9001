@@ -1,0 +1,9 @@
+1.右键springboot-rest项目--run configuations
+
+2.arguments中配置
+-DServer.port=9001
+将这个启动命名为sprest-9001
+
+3.右键sprest-9001，Duplicate，新建一个启动sprest-9000，
+arguments中配置
+-DServer.port=9000
