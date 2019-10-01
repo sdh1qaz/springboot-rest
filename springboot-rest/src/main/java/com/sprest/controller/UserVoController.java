@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sprest.pojo.BaseResult;
 import com.sprest.pojo.UserVo;
+import com.sprest.service.IAsyncService;
 import com.sprest.service.IUserVoService;
 
 import io.swagger.annotations.ApiImplicitParams;
@@ -29,6 +30,9 @@ public class UserVoController {
 
 	@Autowired
 	private IUserVoService userService;
+	
+	@Autowired
+	private IAsyncService asyncService;
 	
 	//日志记录器
 	private static final Logger logger = Logger.getLogger(UserVoController.class);
@@ -108,6 +112,19 @@ public class UserVoController {
 		Map<String, Object> map = new HashMap<>();  
         map.put("sessionId", request.getSession().getId());  
 		return map;
+	}
+	
+	/**
+	 * 异步方法-打开一个记事本
+	 * @throws Exception 
+	 */
+	@ApiOperation(value="异步方法-打开一个记事本",notes="异步方法-打开一个记事本",httpMethod="GET")
+	@ApiResponses({@ApiResponse(code=200,message="success",response=String.class)})
+	@ApiImplicitParams({})
+	@RequestMapping(path="/async/openCmd",method=RequestMethod.GET)
+	public @ResponseBody String openCmd(HttpServletRequest request) throws Exception {
+		asyncService.openCmd();
+		return "5秒后打开记事本";
 	}
 	
 }
