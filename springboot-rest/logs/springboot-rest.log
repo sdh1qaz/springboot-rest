@@ -34,3 +34,4 @@
 2019-10-02 00:06:31,287  INFO RedisServiceImpl:31 - 读取redis，key=USER_UID_1,value=null
 2019-10-02 00:06:31,538  INFO RedisServiceImpl:22 - 写入redis，key=USER_UID_1,value={"activated":0,"created":1490756162,"email":"1034683568@qq.com","groupName":"visitor","logged":0,"password":"a66abb5684c45962d887564f08346e8d","screenName":"admin","uid":1,"username":"admin"}
 2019-10-02 00:09:46,648  INFO RedisServiceImpl:31 - 读取redis，key=USER_UID_1,value={"activated":0,"created":1490756162,"email":"1034683568@qq.com","groupName":"visitor","logged":0,"password":"a66abb5684c45962d887564f08346e8d","screenName":"admin","uid":1,"username":"admin"}
+2019-10-02 00:52:22,561  INFO RedisServiceImpl:31 - 读取redis，key=USER_UID_1,value={"activated":0,"created":1490756162,"email":"1034683568@qq.com","groupName":"visitor","logged":0,"password":"a66abb5684c45962d887564f08346e8d","screenName":"admin","uid":1,"username":"admin"}

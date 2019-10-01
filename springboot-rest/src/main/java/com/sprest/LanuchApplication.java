@@ -14,7 +14,7 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 
 import com.alibaba.druid.pool.DruidDataSource;
 @MapperScan("com.sprest.dao")
-@EnableRedisHttpSession
+@EnableRedisHttpSession(maxInactiveIntervalInSeconds=300)
 @SpringBootApplication
 public class LanuchApplication {
 	
