@@ -122,7 +122,7 @@ public class UserVoController {
 	@ApiResponses({@ApiResponse(code=200,message="success",response=String.class)})
 	@ApiImplicitParams({})
 	@RequestMapping(path="/async/openCmd",method=RequestMethod.GET)
-	public @ResponseBody String openCmd(HttpServletRequest request) throws Exception {
+	public String openCmd(HttpServletRequest request) throws Exception {
 		asyncService.openCmd();
 		return "5秒后打开记事本";
 	}
