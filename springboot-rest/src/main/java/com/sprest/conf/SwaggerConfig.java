@@ -20,7 +20,7 @@ public class SwaggerConfig {
 	@Value("${rest.server.addr}") 
 	private String serverAddr;
 	
-	@Value("${rest.server.port}")
+	//@Value("${rest.server.port}")
 	private String serverPort;
 	
 	
@@ -33,6 +33,7 @@ public class SwaggerConfig {
 	
 	@SuppressWarnings("deprecation")
 	private ApiInfo apiInfo() {
+		serverPort = System.getProperty("Server.port");
 		return new ApiInfo("springboot-rest接口", 
 				"部署信息"+serverAddr+":"+serverPort, "1.0.0", "", "苏登辉", "", "");
 	}
