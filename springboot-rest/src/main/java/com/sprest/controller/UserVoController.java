@@ -19,6 +19,7 @@ import com.sprest.pojo.BaseResult;
 import com.sprest.pojo.UserVo;
 import com.sprest.service.IAsyncService;
 import com.sprest.service.IUserVoService;
+import com.sprest.service.ZkLockService;
 
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
@@ -33,6 +34,9 @@ public class UserVoController {
 	
 	@Autowired
 	private IAsyncService asyncService;
+	
+	@Autowired
+	private ZkLockService zkLockService;
 	
 	//日志记录器
 	private static final Logger logger = Logger.getLogger(UserVoController.class);
@@ -125,6 +129,19 @@ public class UserVoController {
 	public String openCmd(HttpServletRequest request) throws Exception {
 		asyncService.openCmd();
 		return "5秒后打开记事本";
+	}
+	
+	/**
+	 * zk分布式锁测试
+	 * @throws Exception 
+	 */
+	@ApiOperation(value="zk分布式锁测试",notes="zk分布式锁测试",httpMethod="GET")
+	@ApiResponses({@ApiResponse(code=200,message="success",response=String.class)})
+	@ApiImplicitParams({})
+	@RequestMapping(path="/zk/lock",method=RequestMethod.GET)
+	public String testZkLock() throws Exception {
+		
+		return zkLockService.getLock();
 	}
 	
 }
