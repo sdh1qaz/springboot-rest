@@ -2,12 +2,18 @@ package com.sprest.controller;
 
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.Errors;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.sprest.pojo.BaseResult;
 import com.sprest.pojo.UserVo;
+import com.sprest.pojo.ValidatePojo;
 import com.sprest.service.IAsyncService;
 import com.sprest.service.IUserVoService;
 import com.sprest.service.ZkLockService;
@@ -142,6 +149,36 @@ public class UserVoController {
 	public String testZkLock() throws Exception {
 		
 		return zkLockService.getLock();
+	}
+	
+	/**
+	 * 数据验证- JSR-303验证
+	 * @throws Exception 
+	 */
+	@ApiOperation(value="数据验证- JSR-303验证",notes="数据验证- JSR-303验证",httpMethod="POST")
+	@ApiResponses({@ApiResponse(code=200,message="success",response=Map.class)})
+	@ApiImplicitParams({})
+	@RequestMapping(path="/validator",method=RequestMethod.POST)
+	public Map<String, Object> validate(@Valid @RequestBody ValidatePojo vp,Errors errors ){
+		Map<String, Object> errMap = new HashMap<>();
+		//获取错误列表
+		List<ObjectError> oes = errors.getAllErrors();
+		for(ObjectError oe : oes) {
+			String key = null;
+			String msg = null;
+			//字段错误
+			if (oe instanceof FieldError) {
+				FieldError fe = (FieldError) oe;
+				key = fe.getField();
+			}else {
+				//非字段错误
+				key = oe.getObjectName();//获取验证对象名称
+			}
+			//错误信息
+			msg = oe.getDefaultMessage();
+			errMap.put(key, msg);
+		}
+		return errMap;
 	}
 	
 }
