@@ -1,0 +1,16 @@
+一.本地启动
+方法1.双击进入LanuchApplication.java文件，右键run as--java application
+方法2.eclipse中配置Run Configuration决定以哪个配置启动
+--VM arguments:
+-Dspring.profiles.active=dev
+方法3.jar包启动
+java -jar -Dserver.port=9000 -Dspring.profiles.active=dev renshou-0.0.1-SNAPSHOT.jar
+java -jar -Dspring.profiles.active=dev renshou-0.0.1-SNAPSHOT.jar
+
+二.服务器启动
+方法1.指定启动配置文件
+java -jar -Dspring.profiles.active=dev renshou-0.0.1-SNAPSHOT.jar
+方法2.指定多个启动参数
+java -jar -Dserver.port=9000 -Dspring.datasource.password=test123 renshou-0.0.1-SNAPSHOT.jar
+
+

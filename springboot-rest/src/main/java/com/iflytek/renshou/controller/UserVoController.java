@@ -19,14 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.iflytek.renshou.pojo.BaseResult;
 import com.iflytek.renshou.pojo.UserVo;
 import com.iflytek.renshou.pojo.ValidatePojo;
-import com.iflytek.renshou.service.IAsyncService;
 import com.iflytek.renshou.service.IUserVoService;
-import com.iflytek.renshou.service.ZkLockService;
-
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;

@@ -34,7 +34,7 @@
 	</sql>
 
 	<!--增 -->
-	<insert id="insertUserVo" parameterType="com.sprest.pojo.UserVo"
+	<insert id="insertUserVo" parameterType="com.iflytek.renshou.pojo.UserVo"
 		useGeneratedKeys="true" keyProperty="uid">
 		insert into t_users (
 		<include refid="Base_Column_List_without_Uid" />

@@ -1,3 +1,4 @@
+修改<packaging>war</packaging> ---》 <packaging>jar</packaging>
 项目--右键run as--maven build--
 Goals: clean package
 勾选Skip Tests
