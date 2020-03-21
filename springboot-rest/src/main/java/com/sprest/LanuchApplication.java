@@ -1,20 +1,12 @@
 package com.sprest;
 
 import javax.sql.DataSource;
-
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.mybatis.spring.SqlSessionFactoryBean;
-import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
-
 import com.alibaba.druid.pool.DruidDataSource;
-@MapperScan("com.sprest.dao")
-@EnableRedisHttpSession(maxInactiveIntervalInSeconds=300)
+
 @SpringBootApplication
 public class LanuchApplication {
 	
@@ -27,18 +19,6 @@ public class LanuchApplication {
 		return new DruidDataSource();
 	}
 	
-	/**
-	 * 创建SqlSessionFactory实例
-	 */
-	@Bean
-	public SqlSessionFactory sqlSessionFactoryBean() throws Exception {
-		PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-		SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
-		sqlSessionFactoryBean.setDataSource(dataSource());
-		sqlSessionFactoryBean.setMapperLocations(resolver.getResources("classpath*:/mapper/*Mapper.xml"));
-		return sqlSessionFactoryBean.getObject();
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(LanuchApplication.class, args);
 	}
