@@ -235,3 +235,208 @@
 2020-03-22 01:35:50,272  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
 2020-03-22 01:35:50,274  INFO LanuchApplication:59 - Started LanuchApplication in 0.898 seconds (JVM running for 1901.205)
 2020-03-22 01:35:50,276  INFO ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2020-03-22 02:51:01,800  INFO Version:21 - HV000001: Hibernate Validator 6.0.7.Final
+2020-03-22 02:51:01,965  INFO LanuchApplication:50 - Starting LanuchApplication on DESKTOP-5MB9DGL with PID 9456 (D:\git_repo\springboot-rest\springboot-rest\springboot-rest\target\classes started by dhsu_2019 in D:\git_repo\springboot-rest\springboot-rest\springboot-rest)
+2020-03-22 02:51:01,965  INFO LanuchApplication:656 - The following profiles are active: dev
+2020-03-22 02:51:02,015  INFO AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@75bfba5c: startup date [Sun Mar 22 02:51:02 CST 2020]; root of context hierarchy
+2020-03-22 02:51:03,736  INFO TomcatWebServer:91 - Tomcat initialized with port(s): 8080 (http)
+2020-03-22 02:51:03,873  INFO ContextLoader:285 - Root WebApplicationContext: initialization completed in 1861 ms
+2020-03-22 02:51:04,029  INFO ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2020-03-22 02:51:04,033  INFO FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-03-22 02:51:04,034  INFO FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-03-22 02:51:04,034  INFO FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-03-22 02:51:04,034  INFO FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-03-22 02:51:04,526  INFO DruidDataSource:930 - {dataSource-1} inited
+2020-03-22 02:51:04,604  INFO DruidDataSource:930 - {dataSource-2} inited
+2020-03-22 02:51:04,913  INFO RequestMappingHandlerAdapter:567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@75bfba5c: startup date [Sun Mar 22 02:51:02 CST 2020]; root of context hierarchy
+2020-03-22 02:51:05,002  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql]}" onto public int com.sprest.controller.DbManageController.test(java.lang.String) throws java.lang.Exception
+2020-03-22 02:51:05,003  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql.html]}" onto public java.lang.String com.sprest.controller.DbManageController.execSql()
+2020-03-22 02:51:05,007  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-03-22 02:51:05,008  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-03-22 02:51:05,046  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:51:05,047  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:51:05,092  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:51:05,133  WARN TemplateMode:150 - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-03-22 02:51:05,374  INFO OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-03-22 02:51:05,644  INFO AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2020-03-22 02:51:05,645  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource1' has been autodetected for JMX exposure
+2020-03-22 02:51:05,645  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource2' has been autodetected for JMX exposure
+2020-03-22 02:51:05,649  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource1': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource1,type=DruidDataSource]
+2020-03-22 02:51:05,650  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource2': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource2,type=DruidDataSource]
+2020-03-22 02:51:05,694  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-22 02:51:05,698  INFO LanuchApplication:59 - Started LanuchApplication in 4.018 seconds (JVM running for 4.616)
+2020-03-22 02:51:14,081  INFO DispatcherServlet:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-03-22 02:51:14,108  INFO DispatcherServlet:513 - FrameworkServlet 'dispatcherServlet': initialization completed in 27 ms
+2020-03-22 02:57:07,843  INFO Version:21 - HV000001: Hibernate Validator 6.0.7.Final
+2020-03-22 02:57:08,007  INFO LanuchApplication:50 - Starting LanuchApplication on DESKTOP-5MB9DGL with PID 20732 (D:\git_repo\springboot-rest\springboot-rest\springboot-rest\target\classes started by dhsu_2019 in D:\git_repo\springboot-rest\springboot-rest\springboot-rest)
+2020-03-22 02:57:08,007  INFO LanuchApplication:656 - The following profiles are active: dev
+2020-03-22 02:57:08,068  INFO AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1d6a6562: startup date [Sun Mar 22 02:57:08 CST 2020]; root of context hierarchy
+2020-03-22 02:57:09,742  INFO TomcatWebServer:91 - Tomcat initialized with port(s): 8080 (http)
+2020-03-22 02:57:09,877  INFO ContextLoader:285 - Root WebApplicationContext: initialization completed in 1811 ms
+2020-03-22 02:57:10,075  INFO ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2020-03-22 02:57:10,079  INFO FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-03-22 02:57:10,080  INFO FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-03-22 02:57:10,081  INFO FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-03-22 02:57:10,081  INFO FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-03-22 02:57:10,564  INFO DruidDataSource:930 - {dataSource-1} inited
+2020-03-22 02:57:10,648  INFO DruidDataSource:930 - {dataSource-2} inited
+2020-03-22 02:57:10,959  INFO RequestMappingHandlerAdapter:567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1d6a6562: startup date [Sun Mar 22 02:57:08 CST 2020]; root of context hierarchy
+2020-03-22 02:57:11,052  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql]}" onto public int com.sprest.controller.DbManageController.test(java.lang.String) throws java.lang.Exception
+2020-03-22 02:57:11,054  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql.html]}" onto public java.lang.String com.sprest.controller.DbManageController.execSql()
+2020-03-22 02:57:11,057  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-03-22 02:57:11,058  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-03-22 02:57:11,105  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:57:11,105  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:57:11,160  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:57:11,205  WARN TemplateMode:150 - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-03-22 02:57:11,514  INFO OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-03-22 02:57:11,750  INFO AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2020-03-22 02:57:11,750  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource1' has been autodetected for JMX exposure
+2020-03-22 02:57:11,751  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource2' has been autodetected for JMX exposure
+2020-03-22 02:57:11,755  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource1': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource1,type=DruidDataSource]
+2020-03-22 02:57:11,756  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource2': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource2,type=DruidDataSource]
+2020-03-22 02:57:11,798  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-22 02:57:11,800  INFO LanuchApplication:59 - Started LanuchApplication in 4.098 seconds (JVM running for 4.728)
+2020-03-22 02:57:37,005  INFO DispatcherServlet:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-03-22 02:57:37,029  INFO DispatcherServlet:513 - FrameworkServlet 'dispatcherServlet': initialization completed in 24 ms
+2020-03-22 02:58:42,223  INFO Version:21 - HV000001: Hibernate Validator 6.0.7.Final
+2020-03-22 02:58:42,409  INFO LanuchApplication:50 - Starting LanuchApplication on DESKTOP-5MB9DGL with PID 1404 (D:\git_repo\springboot-rest\springboot-rest\springboot-rest\target\classes started by dhsu_2019 in D:\git_repo\springboot-rest\springboot-rest\springboot-rest)
+2020-03-22 02:58:42,410  INFO LanuchApplication:656 - The following profiles are active: dev
+2020-03-22 02:58:42,465  INFO AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@401a40ae: startup date [Sun Mar 22 02:58:42 CST 2020]; root of context hierarchy
+2020-03-22 02:58:44,116  INFO TomcatWebServer:91 - Tomcat initialized with port(s): 8080 (http)
+2020-03-22 02:58:44,249  INFO ContextLoader:285 - Root WebApplicationContext: initialization completed in 1786 ms
+2020-03-22 02:58:44,399  INFO ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2020-03-22 02:58:44,404  INFO FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-03-22 02:58:44,404  INFO FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-03-22 02:58:44,405  INFO FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-03-22 02:58:44,405  INFO FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-03-22 02:58:44,926  INFO DruidDataSource:930 - {dataSource-1} inited
+2020-03-22 02:58:45,012  INFO DruidDataSource:930 - {dataSource-2} inited
+2020-03-22 02:58:45,326  INFO RequestMappingHandlerAdapter:567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@401a40ae: startup date [Sun Mar 22 02:58:42 CST 2020]; root of context hierarchy
+2020-03-22 02:58:45,407  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql]}" onto public int com.sprest.controller.DbManageController.test(java.lang.String) throws java.lang.Exception
+2020-03-22 02:58:45,408  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql.html]}" onto public java.lang.String com.sprest.controller.DbManageController.execSql()
+2020-03-22 02:58:45,412  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-03-22 02:58:45,413  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-03-22 02:58:45,460  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:58:45,460  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:58:45,511  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 02:58:45,556  WARN TemplateMode:150 - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-03-22 02:58:45,833  INFO OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-03-22 02:58:46,059  INFO AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2020-03-22 02:58:46,060  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource1' has been autodetected for JMX exposure
+2020-03-22 02:58:46,060  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource2' has been autodetected for JMX exposure
+2020-03-22 02:58:46,066  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource1': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource1,type=DruidDataSource]
+2020-03-22 02:58:46,067  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource2': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource2,type=DruidDataSource]
+2020-03-22 02:58:46,116  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-22 02:58:46,119  INFO LanuchApplication:59 - Started LanuchApplication in 4.018 seconds (JVM running for 4.643)
+2020-03-22 02:59:03,973  INFO DispatcherServlet:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-03-22 02:59:03,998  INFO DispatcherServlet:513 - FrameworkServlet 'dispatcherServlet': initialization completed in 25 ms
+2020-03-22 03:00:53,641  INFO AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@401a40ae: startup date [Sun Mar 22 02:58:42 CST 2020]; root of context hierarchy
+2020-03-22 03:00:53,643  INFO AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2020-03-22 03:00:53,644  INFO AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2020-03-22 03:00:53,651  INFO DruidDataSource:1825 - {dataSource-2} closed
+2020-03-22 03:00:53,655  INFO DruidDataSource:1825 - {dataSource-1} closed
+2020-03-22 03:01:01,241  INFO LanuchApplication:50 - Starting LanuchApplication on DESKTOP-5MB9DGL with PID 1404 (D:\git_repo\springboot-rest\springboot-rest\springboot-rest\target\classes started by dhsu_2019 in D:\git_repo\springboot-rest\springboot-rest\springboot-rest)
+2020-03-22 03:01:01,241  INFO LanuchApplication:656 - The following profiles are active: dev
+2020-03-22 03:01:01,246  INFO AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@554165: startup date [Sun Mar 22 03:01:01 CST 2020]; root of context hierarchy
+2020-03-22 03:01:01,743  INFO TomcatWebServer:91 - Tomcat initialized with port(s): 8080 (http)
+2020-03-22 03:01:01,764  INFO ContextLoader:285 - Root WebApplicationContext: initialization completed in 518 ms
+2020-03-22 03:01:01,788  INFO ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2020-03-22 03:01:01,788  INFO FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-03-22 03:01:01,788  INFO FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-03-22 03:01:01,789  INFO FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-03-22 03:01:01,789  INFO FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-03-22 03:01:01,927  INFO DruidDataSource:930 - {dataSource-3} inited
+2020-03-22 03:01:02,020  INFO DruidDataSource:930 - {dataSource-4} inited
+2020-03-22 03:01:02,099  INFO RequestMappingHandlerAdapter:567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@554165: startup date [Sun Mar 22 03:01:01 CST 2020]; root of context hierarchy
+2020-03-22 03:01:02,108  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql]}" onto public int com.sprest.controller.DbManageController.test(java.lang.String) throws java.lang.Exception
+2020-03-22 03:01:02,108  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql.html]}" onto public java.lang.String com.sprest.controller.DbManageController.execSql()
+2020-03-22 03:01:02,111  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-03-22 03:01:02,112  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-03-22 03:01:02,122  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:01:02,122  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:01:02,135  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:01:02,147  WARN TemplateMode:150 - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-03-22 03:01:02,189  INFO OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-03-22 03:01:02,405  INFO AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2020-03-22 03:01:02,405  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource1' has been autodetected for JMX exposure
+2020-03-22 03:01:02,406  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource2' has been autodetected for JMX exposure
+2020-03-22 03:01:02,409  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource1': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource1,type=DruidDataSource]
+2020-03-22 03:01:02,409  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource2': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource2,type=DruidDataSource]
+2020-03-22 03:01:02,422  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-22 03:01:02,424  INFO LanuchApplication:59 - Started LanuchApplication in 1.219 seconds (JVM running for 140.948)
+2020-03-22 03:01:02,426  INFO ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2020-03-22 03:01:11,790  INFO DispatcherServlet:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-03-22 03:01:11,794  INFO DispatcherServlet:513 - FrameworkServlet 'dispatcherServlet': initialization completed in 4 ms
+2020-03-22 03:04:41,262  INFO AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@554165: startup date [Sun Mar 22 03:01:01 CST 2020]; root of context hierarchy
+2020-03-22 03:04:41,264  INFO AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2020-03-22 03:04:41,264  INFO AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2020-03-22 03:04:41,274  INFO DruidDataSource:1825 - {dataSource-4} closed
+2020-03-22 03:04:41,277  INFO DruidDataSource:1825 - {dataSource-3} closed
+2020-03-22 03:04:41,851  INFO LanuchApplication:50 - Starting LanuchApplication on DESKTOP-5MB9DGL with PID 1404 (D:\git_repo\springboot-rest\springboot-rest\springboot-rest\target\classes started by dhsu_2019 in D:\git_repo\springboot-rest\springboot-rest\springboot-rest)
+2020-03-22 03:04:41,851  INFO LanuchApplication:656 - The following profiles are active: dev
+2020-03-22 03:04:41,855  INFO AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1fecb263: startup date [Sun Mar 22 03:04:41 CST 2020]; root of context hierarchy
+2020-03-22 03:04:42,243  INFO TomcatWebServer:91 - Tomcat initialized with port(s): 8080 (http)
+2020-03-22 03:04:42,273  INFO ContextLoader:285 - Root WebApplicationContext: initialization completed in 419 ms
+2020-03-22 03:04:42,293  INFO ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2020-03-22 03:04:42,293  INFO FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-03-22 03:04:42,294  INFO FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-03-22 03:04:42,294  INFO FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-03-22 03:04:42,294  INFO FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-03-22 03:04:42,396  INFO DruidDataSource:930 - {dataSource-5} inited
+2020-03-22 03:04:42,465  INFO DruidDataSource:930 - {dataSource-6} inited
+2020-03-22 03:04:42,523  INFO RequestMappingHandlerAdapter:567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1fecb263: startup date [Sun Mar 22 03:04:41 CST 2020]; root of context hierarchy
+2020-03-22 03:04:42,530  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql]}" onto public int com.sprest.controller.DbManageController.test(java.lang.String) throws java.lang.Exception
+2020-03-22 03:04:42,531  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql.html]}" onto public java.lang.String com.sprest.controller.DbManageController.execSql()
+2020-03-22 03:04:42,533  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-03-22 03:04:42,533  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-03-22 03:04:42,543  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:04:42,543  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:04:42,555  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:04:42,563  WARN TemplateMode:150 - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-03-22 03:04:42,596  INFO OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-03-22 03:04:42,830  INFO AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2020-03-22 03:04:42,830  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource1' has been autodetected for JMX exposure
+2020-03-22 03:04:42,830  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource2' has been autodetected for JMX exposure
+2020-03-22 03:04:42,832  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource1': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource1,type=DruidDataSource]
+2020-03-22 03:04:42,833  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource2': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource2,type=DruidDataSource]
+2020-03-22 03:04:42,849  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-22 03:04:42,851  INFO LanuchApplication:59 - Started LanuchApplication in 1.036 seconds (JVM running for 361.375)
+2020-03-22 03:04:42,852  INFO ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
+2020-03-22 03:05:07,050  INFO DispatcherServlet:494 - FrameworkServlet 'dispatcherServlet': initialization started
+2020-03-22 03:05:07,053  INFO DispatcherServlet:513 - FrameworkServlet 'dispatcherServlet': initialization completed in 3 ms
+2020-03-22 03:06:30,294  INFO AnnotationConfigServletWebServerApplicationContext:989 - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@1fecb263: startup date [Sun Mar 22 03:04:41 CST 2020]; root of context hierarchy
+2020-03-22 03:06:30,296  INFO AnnotationMBeanExporter:452 - Unregistering JMX-exposed beans on shutdown
+2020-03-22 03:06:30,296  INFO AnnotationMBeanExporter:183 - Unregistering JMX-exposed beans
+2020-03-22 03:06:30,302  INFO DruidDataSource:1825 - {dataSource-6} closed
+2020-03-22 03:06:30,305  INFO DruidDataSource:1825 - {dataSource-5} closed
+2020-03-22 03:06:30,808  INFO LanuchApplication:50 - Starting LanuchApplication on DESKTOP-5MB9DGL with PID 1404 (D:\git_repo\springboot-rest\springboot-rest\springboot-rest\target\classes started by dhsu_2019 in D:\git_repo\springboot-rest\springboot-rest\springboot-rest)
+2020-03-22 03:06:30,808  INFO LanuchApplication:656 - The following profiles are active: dev
+2020-03-22 03:06:30,812  INFO AnnotationConfigServletWebServerApplicationContext:589 - Refreshing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6e4f214c: startup date [Sun Mar 22 03:06:30 CST 2020]; root of context hierarchy
+2020-03-22 03:06:31,231  INFO TomcatWebServer:91 - Tomcat initialized with port(s): 8080 (http)
+2020-03-22 03:06:31,248  INFO ContextLoader:285 - Root WebApplicationContext: initialization completed in 436 ms
+2020-03-22 03:06:31,267  INFO ServletRegistrationBean:185 - Servlet dispatcherServlet mapped to [/]
+2020-03-22 03:06:31,268  INFO FilterRegistrationBean:243 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2020-03-22 03:06:31,269  INFO FilterRegistrationBean:243 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2020-03-22 03:06:31,269  INFO FilterRegistrationBean:243 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2020-03-22 03:06:31,269  INFO FilterRegistrationBean:243 - Mapping filter: 'requestContextFilter' to: [/*]
+2020-03-22 03:06:31,373  INFO DruidDataSource:930 - {dataSource-7} inited
+2020-03-22 03:06:31,454  INFO DruidDataSource:930 - {dataSource-8} inited
+2020-03-22 03:06:31,516  INFO RequestMappingHandlerAdapter:567 - Looking for @ControllerAdvice: org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6e4f214c: startup date [Sun Mar 22 03:06:30 CST 2020]; root of context hierarchy
+2020-03-22 03:06:31,522  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql]}" onto public int com.sprest.controller.DbManageController.test(java.lang.String) throws java.lang.Exception
+2020-03-22 03:06:31,523  INFO RequestMappingHandlerMapping:548 - Mapped "{[/dbmanager/execSql.html]}" onto public java.lang.String com.sprest.controller.DbManageController.execSql()
+2020-03-22 03:06:31,527  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2020-03-22 03:06:31,527  INFO RequestMappingHandlerMapping:548 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2020-03-22 03:06:31,535  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:06:31,536  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:06:31,545  INFO SimpleUrlHandlerMapping:373 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2020-03-22 03:06:31,553  WARN TemplateMode:150 - [THYMELEAF][restartedMain] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+2020-03-22 03:06:31,579  INFO OptionalLiveReloadServer:57 - LiveReload server is running on port 35729
+2020-03-22 03:06:31,770  INFO AnnotationMBeanExporter:434 - Registering beans for JMX exposure on startup
+2020-03-22 03:06:31,771  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource1' has been autodetected for JMX exposure
+2020-03-22 03:06:31,771  INFO AnnotationMBeanExporter:896 - Bean with name 'defaultDataSource2' has been autodetected for JMX exposure
+2020-03-22 03:06:31,773  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource1': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource1,type=DruidDataSource]
+2020-03-22 03:06:31,773  INFO AnnotationMBeanExporter:669 - Located MBean 'defaultDataSource2': registering with JMX server as MBean [com.alibaba.druid.pool:name=defaultDataSource2,type=DruidDataSource]
+2020-03-22 03:06:31,786  INFO TomcatWebServer:205 - Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-22 03:06:31,788  INFO LanuchApplication:59 - Started LanuchApplication in 1.007 seconds (JVM running for 470.312)
+2020-03-22 03:06:31,790  INFO ConditionEvaluationDeltaLoggingListener:56 - Condition evaluation unchanged
