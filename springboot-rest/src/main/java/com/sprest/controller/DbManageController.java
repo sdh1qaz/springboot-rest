@@ -11,9 +11,14 @@ public class DbManageController {
 	/**
 	 * 页面跳转
 	 */
-	@RequestMapping("/execSql")
+	@RequestMapping("/execSql.html")
 	public String execSql() {
 		return "execSql";
 	}
+	
+	/**
+	 * 查询表头
+	 */
+	
 	
 }
