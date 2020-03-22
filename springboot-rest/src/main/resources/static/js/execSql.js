@@ -17,27 +17,22 @@ var id_arr = [ '688c70f92e92ff64540b25e5dacf9d60',
 		'b1bf294f3cfe26fd92191fab5bb5b09d', 'fb1e6f608a0105d8a9a590c567a6cda1' ];
 // 点击确定按钮执行的方法
 function clickButtSure() {
-	var execId = $('#execId').val();
-	// 如果该ID没有权限，返回
-	if (execId == '') {
-		alert("请输入操作人ID！");
-		return;
-	}
-	// 如果该ID没有权限，返回
-	if (!checkID(execId)) {
-		alert("该ID没有权限！");
-		return;
-	}
+	$("#content_right").empty();
+	/*
+	 * var execId = $('#execId').val(); // 如果该ID没有权限，返回 if (execId == '') {
+	 * alert("请输入操作人ID！"); return; } // 如果该ID没有权限，返回 if (!checkID(execId)) {
+	 * alert("该ID没有权限！"); return; }
+	 */
 	var sql = $('#sqlTextArea').val();
 	if (sql == '') {
 		alert('没有输入sql！');
 		return;
 	}
-	/*
-	 * if (check(sql)) { alert('只允许执行增删改查的sql'); return; }
-	 *//*
-		 * if (!window.confirm('确认要执行输入的sql？')) { return; }
-		 */
+	if (check(sql)) {
+		alert('只允许执行增删改查的sql');
+		return;
+	}
+	// if (!window.confirm('确认要执行输入的sql？')) { return; }
 	var jqdata;
 	$.ajax({
 		url : "/dbmanager/execSql",
@@ -48,16 +43,37 @@ function clickButtSure() {
 		dataType : 'text',
 		success : function(data) {
 			if (data.indexOf("异常：") == 0) {
-				alert(data);
+				// alert(data);
+				$("#resut_exec").empty();// 清空resut_exec下子节点
+				$("#grid").hide();// 隐藏grid下子节点
+				var $p_error = $("<p>执行失败，" + data + "</p>");
+				$("#resut_exec").append($p_error);
 				return;
 			}
 			// 返回的是字符串为数字，说明执行的不是select语句
 			if (!isNaN(data)) {
-				alert('执行成功，影响的行数为：' + data);
+				// alert('执行成功，影响的行数为：' + data);
+				$("#resut_exec").empty();// 清空resut_exec下子节点
+				$("#grid").hide();// 隐藏grid下子节点
+				var $p_success = $("<p>执行成功，影响的行数：" + data + "</p>");
+				$("#resut_exec").append($p_success);
+				return;
+			}
+			var data_json = eval(data);
+			// 如果查询的结果数组长度为0
+			if (getJsonLength(data_json) == 0) {
+				// alert("0");
+				$("#resut_exec").empty();// 清空resut_exec下子节点
+				var $p_select = $("<p>执行成功，查到0条记录！</p>");
+				$("#resut_exec").append($p_select);
 				return;
 			}
 			// 返回的不是数字，说明执行的是select语句
-			pageInit(eval(data));
+			$("#resut_exec").empty();// 清空resut_exec下子节点
+			var $p_select = $("<p>查询成功，结果如下：</p>");
+			$("#resut_exec").append($p_select);
+			$("#grid").show();// 显示grid下子节点
+			pageInit(data_json);
 		}
 	});
 
@@ -68,6 +84,8 @@ function clickButtEmpty() {
 	$('#execId').val('');// 执行人Id输入框清空
 	$('#sqlTextArea').val('');// 输入的sql清空
 	jQuery("#jqGrid").GridUnload();// 删除表原有数据
+	$("#resut_exec").empty();// 清空resut_exec下子节点
+	$("#content_right").empty();
 }
 
 function checkID(id) {
@@ -84,11 +102,10 @@ function checkID(id) {
 }
 
 // 校验sql
-function check(sql) {
-	var c = sql.indexOf('insert') == -1 && sql.indexOf('INSERT') == -1
-			&& sql.indexOf('delete') == -1 && sql.indexOf('DELETE') == -1
-			&& sql.indexOf('update') == -1 && sql.indexOf('UPDATE') == -1
-			&& sql.indexOf('select') == -1 && sql.indexOf('SELECT') == -1;
+function check(sql_exec) {
+	var sql = sql_exec.toLowerCase();
+	var c = sql.indexOf('insert') == -1 && sql.indexOf('delete') == -1
+			&& sql.indexOf('update') == -1 && sql.indexOf('select') == -1
 	return c;
 }
 
@@ -108,7 +125,7 @@ function pageInit(jqdata) {
 		names.push(key);
 		model.push({
 			name : key,
-			index : key
+			editable : true
 		});
 	});
 	// 创建jqGrid组件
@@ -119,15 +136,39 @@ function pageInit(jqdata) {
 		rowNum : 10,// 在grid上显示记录条数，这个参数是要被传递到后台
 		rowList : [ 10, 20, 30 ],// 可供用户选择一页显示多少条
 		pager : '#jqGridPager',// 一个下拉选择框，用来改变显示记录数，当选择时会覆盖rowNum参数传递到后台
-		sortname : 'id',// 初始化的时候排序的字段
-		sortorder : "desc",// 排序方式,可选desc,asc
 		mtype : "post",// 排序顺序，升序或者降序（asc or desc）
 		viewrecords : true,// 是否要显示总记录数
-		autowidth : true,//宽度自适应
-		caption : "查询语句的结果"// 表格的标题名字
+		autowidth : true,// 宽度自适应
+		height : 390,// 高度
+		ExpandColClick : true,
+		forceFit : true,//
+		caption : "查询语句的结果",// 表格的标题名字
+		onCellSelect : function(rowid) {
+			showRowData(rowid);
+		}
 	});
 	// 将jqdata的值循环添加进jqGrid
 	for (var i = 0; i <= jqdata.length; i++) {
 		jQuery("#jqGrid").jqGrid('addRowData', i + 1, jqdata[i]);
 	}
+	jQuery("#jqGrid").jqGrid('addRowData', i + 1, jqdata[i]);
+}
+
+function showRowData(rowid) {
+	var rowData = jQuery("#jqGrid").jqGrid('getRowData', rowid);
+	var rowData_str = "";
+	//遍历显示json对象
+	for(var key in rowData){
+		rowData_str += "<xmp style='white-space:normal;font-size:16px;margin-top: 0px;margin-bottom: 0px;margin-left: 30px;'>" + key + " : " + rowData[key] + "</xmp>" + "<br>";
+	}
+	$("#content_right").html(rowData_str);//被<xmp></xmp>包含的html代码将在网页上显示出来
+}
+
+// 获取json数组的长度
+function getJsonLength(jsonData) {
+	var jsonLength = 0;
+	for ( var item in jsonData) {
+		jsonLength++;
+	}
+	return jsonLength;
 }

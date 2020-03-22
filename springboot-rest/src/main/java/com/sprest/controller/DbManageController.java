@@ -40,13 +40,13 @@ public class DbManageController {
 		//如果操作甘肃的表，就是用数据源2
 		if (DBUtils.isoperateGStable(sql)) {
 			ds = (DataSource)BeanUtils.getBean("defaultDataSource2");
-		}else {
+		}else {//不是甘肃的表，用数据源1
 			ds = (DataSource)BeanUtils.getBean("defaultDataSource1");
 		}
 		try {
 			//如果是查询语句
 			if (DBUtils.isSelectSql(sql)) {
-				res = DBUtils.executeQuery(ds, sql);
+				res = DBUtils.executeQuery(ds, sql).replace("<", "&lt;").replace(">", "&gt;");//
 			}else {
 				res = DBUtils.executeUpdate(ds, sql);
 			}

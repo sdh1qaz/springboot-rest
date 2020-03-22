@@ -33,9 +33,7 @@ public class DBUtils {
             statement = connection.createStatement();
             resultSet = statement.executeQuery(querySql);
             res = resultSetToJson(resultSet);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
+        }finally {
         	statement.close();
         	connection.close();
         }
@@ -73,7 +71,7 @@ public class DBUtils {
     {
        // json数组
        JSONArray array = new JSONArray();
-       // 获取列数
+       // 获取列名信息
        ResultSetMetaData metaData = rs.getMetaData();
        int columnCount = metaData.getColumnCount();
        // 遍历ResultSet中的每条数据
