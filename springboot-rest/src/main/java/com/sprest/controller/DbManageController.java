@@ -2,11 +2,9 @@ package com.sprest.controller;
 
 
 import javax.sql.DataSource;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.sprest.util.BeanUtils;
 import com.sprest.util.DBUtils;
 
@@ -28,12 +26,22 @@ public class DbManageController {
 	 */
 	@RequestMapping("/execSql")
 	@ResponseBody
-	public int test(String sql) throws Exception {
-		DataSource ds = (DataSource)BeanUtils.getBean("defaultDataSource2");
-		int executeUpdate = DBUtils.executeUpdate(ds, sql);
-		return executeUpdate;
+	public Object test(String sql) throws Exception {
+		Object res = null;
+		DataSource ds = null;
+		//如果操作甘肃的表，就是用数据源2
+		if (DBUtils.isoperateGStable(sql)) {
+			ds = (DataSource)BeanUtils.getBean("defaultDataSource2");
+		}else {
+			ds = (DataSource)BeanUtils.getBean("defaultDataSource1");
+		}
+		//如果是查询语句
+		if (DBUtils.isSelectSql(sql)) {
+			res = DBUtils.executeQuery(ds, sql);
+		}else {
+			res = DBUtils.executeUpdate(ds, sql);
+		}
+		return res;
 	}
-	
-	
 	
 }
