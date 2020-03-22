@@ -1,28 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>执行sql</title>
-	<!-- jqGrid组件基础样式包-必要 -->
-	<link rel="stylesheet" href="/jqgrid/css/ui.jqgrid.css" />
-	<!-- jqGrid主题包-非必要 --> 
-	<!-- 在jqgrid/css/css这个目录下还有其他的主题包，可以尝试更换看效果 -->
-	<link rel="stylesheet" href="/jqgrid/css/css/redmond/jquery-ui-1.8.16.custom.css" />
-	<!-- jquery插件包-必要 -->
-	<!-- 这个是所有jquery插件的基础，首先第一个引入 -->
-	<script type="text/javascript" src="/js/jquery-1.7.1.js"></script>
-	<script type="text/javascript" src="/js/execSql.js"></script>
-	<!-- jqGrid插件包-必要 -->
-	<script type="text/javascript" src="/jqgrid/js/jquery.jqGrid.src.js"></script>
-	<!-- jqGrid插件的多语言包-非必要 -->
-	<!-- 在jqgrid/js/i18n下还有其他的多语言包，可以尝试更换看效果 -->
-	<script type="text/javascript" src="/jqgrid/js/i18n/grid.locale-cn.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>执行sql</title>
+<!-- jqGrid组件基础样式包-必要 -->
+<link rel="stylesheet" href="/jqgrid/css/ui.jqgrid.css" />
+<!-- jqGrid主题包-非必要 -->
+<!-- 在jqgrid/css/css这个目录下还有其他的主题包，可以尝试更换看效果 -->
+<link rel="stylesheet"
+	href="/jqgrid/css/css/redmond/jquery-ui-1.8.16.custom.css" />
+<!-- jquery插件包-必要 -->
+<!-- 这个是所有jquery插件的基础，首先第一个引入 -->
+<script type="text/javascript" src="/js/jquery-1.7.1.js"></script>
+<script type="text/javascript" src="/js/execSql.js"></script>
+<!-- jqGrid插件包-必要 -->
+<script type="text/javascript" src="/jqgrid/js/jquery.jqGrid.src.js"></script>
+<!-- jqGrid插件的多语言包-非必要 -->
+<!-- 在jqgrid/js/i18n下还有其他的多语言包，可以尝试更换看效果 -->
+<script type="text/javascript" src="/jqgrid/js/i18n/grid.locale-cn.js"></script>
+<script type="text/javascript" src="/js/md5.js"></script>
+<style type="text/css">
+	#grid{width: 60%}
+</style>
 </head>
 <body>
 <body>
+	操作人ID：
+	<input type="text" id="execId" placeholder="请输入操作人ID..."
+		autocomplete="off" style="width: 30%; height: 33px;"></input>
+	<br>
 	<br>
 	<textarea name="sql"
-		style="width: 60%; height: 120px; font-size: 25px;" id="sqlTextArea"
+		style="width: 60%; height: 160px; font-size: 20px;" id="sqlTextArea"
 		placeholder="输入SQL语句..."></textarea>
 	<br>
 	<button type="submit" id="sure" style="width: 103px; height: 33px"
@@ -31,8 +40,9 @@
 		onclick="clickButtEmpty()">清空</button>
 	<br>
 	<hr
-		style="background-color: #0c0c0c; height: 1px; width: 60%; margin-left: 0px;"><br>
-	<div>
+		style="background-color: #0c0c0c; height: 1px; width: 60%; margin-left: 0px;">
+	<br>
+	<div id="grid">
 		<table id="jqGrid"></table>
 		<!-- jqgrid表格 -->
 		<div id="jqGridPager"></div>

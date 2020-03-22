@@ -59,8 +59,6 @@ public class DBUtils {
     		connection = dataSource.getConnection();
     		statement = connection.createStatement();
     		executeUpdate = statement.executeUpdate(sql);
-    	} catch (SQLException e) {
-    		e.printStackTrace();
     	} finally {
     		statement.close();
     		connection.close();

@@ -21,12 +21,20 @@ public class DbManageController {
 	}
 	
 	/**
+	 * 页面跳转
+	 */
+	@RequestMapping("/md5.html")
+	public String md5() {
+		return "md5";
+	}
+	
+	/**
 	 * test
 	 * @throws Exception 
 	 */
 	@RequestMapping("/execSql")
 	@ResponseBody
-	public Object test(String sql) throws Exception {
+	public Object test(String sql){
 		Object res = null;
 		DataSource ds = null;
 		//如果操作甘肃的表，就是用数据源2
@@ -35,11 +43,15 @@ public class DbManageController {
 		}else {
 			ds = (DataSource)BeanUtils.getBean("defaultDataSource1");
 		}
-		//如果是查询语句
-		if (DBUtils.isSelectSql(sql)) {
-			res = DBUtils.executeQuery(ds, sql);
-		}else {
-			res = DBUtils.executeUpdate(ds, sql);
+		try {
+			//如果是查询语句
+			if (DBUtils.isSelectSql(sql)) {
+				res = DBUtils.executeQuery(ds, sql);
+			}else {
+				res = DBUtils.executeUpdate(ds, sql);
+			}
+		} catch (Exception e) {
+			res = "异常：" + e.getMessage();
 		}
 		return res;
 	}

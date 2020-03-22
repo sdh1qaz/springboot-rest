@@ -9,9 +9,25 @@
 	"password" : "boomboomboom",
 	"madan":"12"
 } ]*/
-
+var id_arr = [ '688c70f92e92ff64540b25e5dacf9d60',
+		'6898305e2e88a71024912da539f9abdb', 'f67fd42cac0cc2af4320b22239bf102e',
+		'deefc6b7063a8bb9d91b0a973fbe8a6c', '44817ee8d8603d84a62397ab3a34939e',
+		'fd6fd185e79fda33c6d044c3e5bea867', '263ec18930ba17c8deef6b041d2b37d8',
+		'46e4a504257561318ed909febda8c98c', '22c51b37898344ff52e617f5e48e9561',
+		'b1bf294f3cfe26fd92191fab5bb5b09d', 'fb1e6f608a0105d8a9a590c567a6cda1' ];
 // 点击确定按钮执行的方法
 function clickButtSure() {
+	var execId = $('#execId').val();
+	// 如果该ID没有权限，返回
+	if (execId == '') {
+		alert("请输入操作人ID！");
+		return;
+	}
+	// 如果该ID没有权限，返回
+	if (!checkID(execId)) {
+		alert("该ID没有权限！");
+		return;
+	}
 	var sql = $('#sqlTextArea').val();
 	if (sql == '') {
 		alert('没有输入sql！');
@@ -26,25 +42,45 @@ function clickButtSure() {
 	$.ajax({
 		url : "/dbmanager/execSql",
 		type : "POST",
-		data : {sql:sql},
+		data : {
+			sql : sql
+		},
 		dataType : 'text',
 		success : function(data) {
-			//返回的是字符串为数字，说明执行的不是select语句
+			if (data.indexOf("异常：") == 0) {
+				alert(data);
+				return;
+			}
+			// 返回的是字符串为数字，说明执行的不是select语句
 			if (!isNaN(data)) {
 				alert('执行成功，影响的行数为：' + data);
 				return;
 			}
-			//返回的不是数字，说明执行的是select语句
+			// 返回的不是数字，说明执行的是select语句
 			pageInit(eval(data));
 		}
 	});
-	
+
 }
 
 // 点击清空按钮执行的方法
 function clickButtEmpty() {
+	$('#execId').val('');// 执行人Id输入框清空
 	$('#sqlTextArea').val('');// 输入的sql清空
 	jQuery("#jqGrid").GridUnload();// 删除表原有数据
+}
+
+function checkID(id) {
+	// md5加密
+	var id_md5 = md5(id);
+	// 和数组id_arr比对
+	for (var i = 0; i < id_arr.length; i++) {
+		if (id_md5 == id_arr[i]) {
+			return true;
+		}
+	}
+	return false;
+
 }
 
 // 校验sql
@@ -72,8 +108,7 @@ function pageInit(jqdata) {
 		names.push(key);
 		model.push({
 			name : key,
-			index : key,
-			width : 100
+			index : key
 		});
 	});
 	// 创建jqGrid组件
@@ -88,6 +123,7 @@ function pageInit(jqdata) {
 		sortorder : "desc",// 排序方式,可选desc,asc
 		mtype : "post",// 排序顺序，升序或者降序（asc or desc）
 		viewrecords : true,// 是否要显示总记录数
+		autowidth : true,//宽度自适应
 		caption : "查询语句的结果"// 表格的标题名字
 	});
 	// 将jqdata的值循环添加进jqGrid
