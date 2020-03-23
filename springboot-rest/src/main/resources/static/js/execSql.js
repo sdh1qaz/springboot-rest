@@ -16,13 +16,34 @@ var id_arr = [ '688c70f92e92ff64540b25e5dacf9d60',
 		'46e4a504257561318ed909febda8c98c', '22c51b37898344ff52e617f5e48e9561',
 		'b1bf294f3cfe26fd92191fab5bb5b09d', 'fb1e6f608a0105d8a9a590c567a6cda1' ];
 // 点击确定按钮执行的方法
+function qryHistory() {
+	var execId = $('#execId').val(); // 如果该ID没有权限，返回
+	if (execId == '') {
+		alert("请输入操作人ID！");
+		return;
+	}
+	// 如果该ID没有权限，返回
+	if (!checkID(execId)) {
+		alert("该ID没有权限！");
+		return;
+	}
+	window.location.href = '/dbmanager/getExecHistory?operId=' + execId;
+
+}
 function clickButtSure() {
 	$("#content_right").empty();
-	/*
-	 * var execId = $('#execId').val(); // 如果该ID没有权限，返回 if (execId == '') {
-	 * alert("请输入操作人ID！"); return; } // 如果该ID没有权限，返回 if (!checkID(execId)) {
-	 * alert("该ID没有权限！"); return; }
-	 */
+
+	var execId = $('#execId').val(); // 如果该ID没有权限，返回
+	if (execId == '') {
+		alert("请输入操作人ID！");
+		return;
+	}
+	// 如果该ID没有权限，返回
+	if (!checkID(execId)) {
+		alert("该ID没有权限！");
+		return;
+	}
+
 	var sql = $('#sqlTextArea').val();
 	if (sql == '') {
 		alert('没有输入sql！');
@@ -38,7 +59,8 @@ function clickButtSure() {
 		url : "/dbmanager/execSql",
 		type : "POST",
 		data : {
-			sql : sql
+			sql : sql,
+			operId : $('#execId').val()
 		},
 		dataType : 'text',
 		success : function(data) {
@@ -139,7 +161,7 @@ function pageInit(jqdata) {
 		mtype : "post",// 排序顺序，升序或者降序（asc or desc）
 		viewrecords : true,// 是否要显示总记录数
 		autowidth : true,// 宽度自适应
-		height : 390,// 高度
+		height : 500,// 高度
 		ExpandColClick : true,
 		forceFit : true,//
 		caption : "查询语句的结果",// 表格的标题名字
@@ -151,17 +173,22 @@ function pageInit(jqdata) {
 	for (var i = 0; i <= jqdata.length; i++) {
 		jQuery("#jqGrid").jqGrid('addRowData', i + 1, jqdata[i]);
 	}
-	jQuery("#jqGrid").jqGrid('addRowData', i + 1, jqdata[i]);
+	$("#bsdata").click(function() {
+		jQuery("#jqGrid").jqGrid('searchGrid', {
+			sopt : [ 'cn', 'bw', 'eq', 'ne', 'lt', 'gt', 'ew' ]
+		});
+	});
 }
 
 function showRowData(rowid) {
 	var rowData = jQuery("#jqGrid").jqGrid('getRowData', rowid);
 	var rowData_str = "";
-	//遍历显示json对象
-	for(var key in rowData){
-		rowData_str += "<xmp style='white-space:normal;font-size:16px;margin-top: 0px;margin-bottom: 0px;margin-left: 30px;'>" + key + " : " + rowData[key] + "</xmp>" + "<br>";
+	// 遍历显示json对象
+	for ( var key in rowData) {
+		rowData_str += "<xmp style='white-space:normal;font-size:16px;margin-top: 0px;margin-bottom: 0px;margin-left: 30px;'>"
+				+ key + " : " + rowData[key] + "</xmp>" + "<br>";
 	}
-	$("#content_right").html(rowData_str);//被<xmp></xmp>包含的html代码将在网页上显示出来
+	$("#content_right").html(rowData_str);// 被<xmp></xmp>包含的html代码将在网页上显示出来
 }
 
 // 获取json数组的长度

@@ -24,25 +24,27 @@
 	/* margin-left: 1%; */
 	width: 60%;
 	float: left;
+	height: 860px;
 }
 
 #content_right {
 	/* margin-left: 1%; */
 	width: 38%;
 	float: left;
+	overflow: auto;
+	height: 860px;
 }
 
 #grid {
 	width: 100%
 }
-
 </style>
 </head>
 <body>
 <body>
 	<div id="content_left">
 		操作人ID： <input type="text" id="execId" placeholder="请输入操作人ID..."
-			autocomplete="off" style="width: 30%; height: 33px; font-size: 16px;"></input>
+			autocomplete="off" style="width: 50%; height: 33px; font-size: 16px;"></input>
 		<br> <br>
 		<textarea name="sql"
 			style="width: 100%; height: 160px; font-size: 20px;" id="sqlTextArea"
@@ -52,19 +54,21 @@
 			onclick="clickButtSure();">执行</button>
 		<button id="back" type="reset" style="width: 103px; height: 33px"
 			onclick="clickButtEmpty()">清空</button>
+		<button id="qryHis" style="width: 103px; height: 33px"
+			onclick="qryHistory()">历史</button>
 		<br> <br>
 		<hr
 			style="background-color: #0c0c0c; height: 0px; width: 100%; margin-left: 0px;">
 		<div id="resut_exec"></div>
 		<div id="grid">
-			<table id="jqGrid"></table>
+			 <input type="button" id="bsdata" value="Search" />
 			<!-- jqgrid表格 -->
-			<div id="jqGridPager"></div>
+			<table id="jqGrid"></table>
 			<!-- 表格页脚 -->
+			<div id="jqGridPager"></div>
 		</div>
 	</div>
-	<div id="content_right">
-	</div>
+	<div id="content_right"></div>
 
 </body>
 </html>
