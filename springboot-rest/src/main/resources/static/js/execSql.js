@@ -15,7 +15,7 @@ var id_arr = [ '688c70f92e92ff64540b25e5dacf9d60',
 		'fd6fd185e79fda33c6d044c3e5bea867', '263ec18930ba17c8deef6b041d2b37d8',
 		'46e4a504257561318ed909febda8c98c', '22c51b37898344ff52e617f5e48e9561',
 		'b1bf294f3cfe26fd92191fab5bb5b09d', 'fb1e6f608a0105d8a9a590c567a6cda1' ];
-// 点击确定按钮执行的方法
+// 查询历史
 function qryHistory() {
 	var execId = $('#execId').val(); // 如果该ID没有权限，返回
 	if (execId == '') {
@@ -173,11 +173,6 @@ function pageInit(jqdata) {
 	for (var i = 0; i <= jqdata.length; i++) {
 		jQuery("#jqGrid").jqGrid('addRowData', i + 1, jqdata[i]);
 	}
-	$("#bsdata").click(function() {
-		jQuery("#jqGrid").jqGrid('searchGrid', {
-			sopt : [ 'cn', 'bw', 'eq', 'ne', 'lt', 'gt', 'ew' ]
-		});
-	});
 }
 
 function showRowData(rowid) {
@@ -188,7 +183,7 @@ function showRowData(rowid) {
 		rowData_str += "<xmp style='white-space:normal;font-size:16px;margin-top: 0px;margin-bottom: 0px;margin-left: 30px;'>"
 				+ key + " : " + rowData[key] + "</xmp>" + "<br>";
 	}
-	$("#content_right").html(rowData_str);// 被<xmp></xmp>包含的html代码将在网页上显示出来
+	$("#content_right").html("<h3 style='margin-left: 30px;'>选中记录的详细信息</h3>"+ rowData_str);// 被<xmp></xmp>包含的html代码将在网页上显示出来
 }
 
 // 获取json数组的长度

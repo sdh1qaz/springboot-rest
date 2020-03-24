@@ -34,14 +34,6 @@ public class DbManageController {
 	}
 	
 	/**
-	 * 页面跳转
-	 */
-	@RequestMapping("/md5.html")
-	public String md5() {
-		return "md5";
-	}
-	
-	/**
 	 * 执行sql
 	 * @throws Exception 
 	 */
