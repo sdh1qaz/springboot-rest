@@ -30,6 +30,7 @@ function qryHistory() {
 	window.location.href = '/dbmanager/getExecHistory?operId=' + execId;
 
 }
+//点击确定按钮
 function clickButtSure() {
 	$("#content_right").empty();
 
@@ -110,6 +111,7 @@ function clickButtEmpty() {
 	$("#content_right").empty();
 }
 
+//校验ID
 function checkID(id) {
 	// md5加密
 	var id_md5 = md5(id);
