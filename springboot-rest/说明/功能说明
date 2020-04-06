@@ -1,2 +1,3 @@
 在页面上管理数据库
 页面上输入sql，后台执行。
+http://localhost:8080/dbmanager/execSql.html
